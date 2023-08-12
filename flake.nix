@@ -27,7 +27,7 @@
                 {
 
                   env.NIX_LD_SO_CACHE = pkgs.runCommand "ld.so.cache" {} ''
-                    ${nixpkgs.lib.strings.escapeShellArg pkgs.glibc.bin}/bin/ldconfig -C $out $f ${
+                    ${nixpkgs.lib.strings.escapeShellArg pkgs.glibc.bin}/bin/ldconfig -C $out -f ${
                       nixpkgs.lib.strings.escapeShellArg (
                         pkgs.writeTextFile {
                           name = "ld.so.conf";
